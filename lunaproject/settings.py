@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'lunamodel'
 ]
 
 MIDDLEWARE = [
@@ -70,7 +71,7 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'AdventureWorksDW2019',
+        'NAME': 'BikeStores',
         'USER': 'sa',
         'PASSWORD': '@VIZEN5822511',
         'HOST': 'localhost\SQLEXPRESS',
