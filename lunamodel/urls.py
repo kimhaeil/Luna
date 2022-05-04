@@ -4,5 +4,5 @@ from django.urls import path
 from lunamodel import views
 
 urlpatterns = [
-    path('', views.index)
+    path('select/', views.getStores)
 ]
