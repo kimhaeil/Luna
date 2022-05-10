@@ -32,7 +32,4 @@ def getStores(request):
             cursor.execute(
                 "SELECT * FROM [BikeStores].[sales].[stores]")
             stores = cursor.fetchall()
-            serializer = StoresSerializer(stores, many=True)
-            print(json)
-
-        return JsonResponse(serializer.data, safe=False)
+        return JsonResponse(stores, safe=False)
