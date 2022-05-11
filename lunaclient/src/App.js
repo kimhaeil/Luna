@@ -1,6 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import {useState} from 'react';
 
+
+function Article(props){
+  return <article>
+    <h2>{props.title}</h2>
+    {props.body}
+  </article>
+}
 
 function Header(props){
     return  <header>
@@ -18,7 +26,7 @@ function Nav(props){
     brands.push(<li>
                     <a id={c.id} href={'/read/'+c.id} onClick={event=>{
                       event.preventDefault();
-                      props.onChangeMode(event.target.id);
+                      props.onChangeMode(Number(event.target.id));
                     }} >{c.contents}</a>
                 </li>);
   }
@@ -30,19 +38,39 @@ function Nav(props){
 }
 
 function App() {
+  const [mode, setMode] = useState('WELCOME');
+  const [id, setId] = useState(null);
   const items = [
-    {id: 1, contents:'Nike'},
-    {id: 2, contents:'Adidasss'},
-    {id: 3, contents:'Puma'}
+    {id: 1, contents:'Nike', model :'Neymar'},
+    {id: 2, contents:'Adidasss', model: 'Sonny'},
+    {id: 3, contents:'Puma', model: 'Park'}
   ]
+
+  let content = null;
+  if(mode==='WELCOME'){
+    content = <Article title='Welcome' body='Hello Luna'></Article>
+  }else if(mode === 'READ')
+  {
+    let body, title = null;
+    for(let i=0; i< items.length; i++){
+      if(items[i].id === id){
+        body = items[i].contents;
+        title = items[i].model;
+      }
+    }
+    content = <Article title={title} body={body}></Article>
+  }
+
   return (
     <div>
         <Header onChangeMode = {function(){
-          alert("Header");
+          setMode('WELCOME');
         }}></Header>
-        <Nav items={items} onChangeMode={(id) => {
-          alert(id);
+        <Nav items={items} onChangeMode={(_id) => {
+          setMode('READ');
+          setId(_id);
         }}></Nav>
+        {content}
     </div>
   );
 }
