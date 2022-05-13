@@ -1,7 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react';
+import axios from 'axios';
 
+function GetStores(){
+  axios.get("http://127.0.0.1:8000/select/")
+  .then((Response) => {console.log(Response.data)})
+  .catch((Error) => {console.log(Error)})
+}
 
 function Article(props){
   return <article>
@@ -45,7 +51,7 @@ function App() {
     {id: 2, contents:'Adidasss', model: 'Sonny'},
     {id: 3, contents:'Puma', model: 'Park'}
   ]
-
+  GetStores()
   let content = null;
   if(mode==='WELCOME'){
     content = <Article title='Welcome' body='Hello Luna'></Article>
@@ -70,6 +76,7 @@ function App() {
           setMode('READ');
           setId(_id);
         }}></Nav>
+        <GetStores></GetStores>
         {content}
     </div>
   );
