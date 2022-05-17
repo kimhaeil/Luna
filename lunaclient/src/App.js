@@ -10,10 +10,13 @@ import { Box, Container, Grid, Link, Typography } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 //#endregion
 
+import Dashboard from "./Dashboard";
+
 function App() {
   return (
-    <Container component="main" maxWidth="xs">
-      <Box
+    <Container component="main" maxWidth="xl">
+        <Dashboard/>
+      {/* <Box
         sx={{
           marginTop:8,
           display: 'flex',
@@ -65,8 +68,10 @@ function App() {
             <Link>Don't have an account? Sign Up</Link>
           </Grid>
         </Grid>
-      </Box>
+      </Box> */}
+    
     </Container>
+
   );
 }
 
