@@ -11,11 +11,13 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 //#endregion
 
 import Dashboard from "./Dashboard";
+import Chart from "./Chart";
 
 function App() {
   return (
     <Container component="main" maxWidth="xl">
         <Dashboard/>
+        <Chart/>
       {/* <Box
         sx={{
           marginTop:8,
