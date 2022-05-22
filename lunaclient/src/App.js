@@ -16,35 +16,59 @@ import Paper from '@mui/material/Paper';
 import Dashboard from "./Dashboard";
 import Chart from "./Chart";
 import Summary from "./Summary";
+import DistributionChart from "./DistributionChart";
 
-const mdTheme = createTheme();
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
 
 
 function App() {
   return (
-  <Container maxWidth="1g" sx={{mt: 4, mb:4}} style={{background: '#f2f6fc'}}>
-    <Grid container spacing={3}>
-      <Grid item xs={12} md={8} lg={9}>
-        <Paper
-          sx={{
-            p:2,
-            display:'flex',
-            flexDirection: 'column',
-            height:240
-          }}>
-            <Chart/>
-        </Paper>
+    <Container
+      maxWidth="1g"
+      sx={{ mt: 4, mb: 4 }}
+      style={{ background: "#f2f6fc" }}
+    >
+      <Dashboard />
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={8} lg={9}>
+          <Paper
+            sx={{
+              p: 2,
+              display: "flex",
+              flexDirection: "column",
+              height: 240,
+            }}
+          >
+            <Chart />
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={4} lg={3}>
+          <Paper
+            sx={{
+              p: 2,
+              display: "flex",
+              flexDirection: "column",
+              height: 240,
+            }}
+          >
+            <Summary />
+          </Paper>
+        </Grid>
       </Grid>
-    </Grid>
-  </Container>
+      <Grid Container spacing={3}>
+        <Grid item xs={12} md={8} lg={9}>
+          <Paper
+            sx={{
+              p: 2,
+              display: "flex",
+              flexDirection: "column",
+              height: 240,
+            }}
+          >
+            <DistributionChart/>
+          </Paper>
+        </Grid>
+      </Grid>
+    </Container>
   );
 }
 export default App;
