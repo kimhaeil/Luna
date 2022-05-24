@@ -11,6 +11,7 @@ import Chart from "./Chart";
 import Summary from "./Summary";
 import DistributionChart from "./DistributionChart";
 import UsageChart from "./UsageChart";
+import  Store  from "./DataInterface";
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
           </Paper>
         </Grid>
       </Grid>
+      <Store/>
     </Container>
   );
 }
