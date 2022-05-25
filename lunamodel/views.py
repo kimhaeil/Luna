@@ -11,6 +11,7 @@ from rest_framework.response import Response
 # Create your views here.
 from rest_framework.renderers import JSONRenderer
 
+from .StoreSerializer import StoreSerializer
 
 def MainView(articleTag, id=None):
 
@@ -32,4 +33,9 @@ def getStores(request):
             cursor.execute(
                 "SELECT * FROM [BikeStores].[sales].[stores]")
             stores = cursor.fetchall()
-        return JsonResponse(stores, safe=False)
+            result= []
+            keys = ('store_id', 'store_name', 'phone', 'email', 'street', 'city', 'state', 'zip_code',)
+            for item in stores:
+                result.append(dict(zip(keys,item)))
+            json_data = json.dumps(result)
+        return HttpResponse(stores, content_type="application/json")

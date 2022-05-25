@@ -14,16 +14,29 @@ class Stores extends Component{
             state:"",
             zip_code:""
         };
+
+        console.log("this constructor");
     }
     
     componentDidMount(){
-        fetch('https://jsonplaceholder.typicode.com/users')
+        fetch('http://127.0.0.1:8000/select/')
                 .then(response => response.json())
-                .then((json) => console.log(json));
+                .then((response) => {
+                    this.setState({
+                        store_id : response.store_id
+                    })
+                });
+
+
     }
+
+    componentDidUpdate(){
+        console.log("Did Update")
+    }
+
     render(){
         return (
-            "dfdf"
+            <p>{this.state.store_id}</p>
         );
     }
 }
