@@ -14,5 +14,8 @@ class Stores(models.Model):
     state: models.CharField(max_length=10)
     zip_code: models.CharField(max_length=5)
 
+    def __str__(self):
+        return self.store_id
+
 
 

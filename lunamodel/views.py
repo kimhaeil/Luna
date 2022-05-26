@@ -22,11 +22,11 @@ def getStores(request):
     if request.method == 'GET':
         store = Stores.objects.all()
         print(store)
-        # StoreSerializer = StoreSerializer(store, many=True)
-        return JsonResponse(StoreSerializer.data, safe=False)
+        store_serializer = StoreSerializer(store, many=True)
+        return JsonResponse(store_serializer.data, safe=False)
     elif request.method == 'POST':
         store_data = JSONParser().parse(request)
-        StoreSerializer = StoreSerializer(data=store_data)
+        store_serializer = StoreSerializer(data=store_data)
         if StoreSerializer.is_valid():
             StoreSerializer.save()
             return JsonResponse("Added", safe=False)
