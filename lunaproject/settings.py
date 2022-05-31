@@ -79,7 +79,7 @@ TEMPLATES = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'mssql',
+        'ENGINE': 'sql_server.pyodbc',
         'NAME': 'BikeStores',
         'USER': 'sa',
         'PASSWORD': '@VIZEN5822511',
@@ -87,7 +87,7 @@ DATABASES = {
         'PORT': '',
 
         'OPTIONS': {
-                'driver': 'ODBC Driver 17 for SQL Server',
+                'driver': 'ODBC Driver 13 for SQL Server',
         },
     },
 }

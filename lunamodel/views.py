@@ -1,4 +1,6 @@
+
 from urllib import response
+from django import views
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.db import connection
@@ -13,24 +15,29 @@ from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
 
 from .StoreSerializer import StoreSerializer
+from rest_framework import views
 from .models import Stores
 
-
-@api_view(['GET', 'POST'])
+@api_view(["GET"])
 @csrf_exempt
-def getStores(request):
-    if request.method == 'GET':
-        store = Stores.objects.all()
-        print(store)
-        store_serializer = StoreSerializer(store, many=True)
-        return JsonResponse(store_serializer.data, safe=False)
-    elif request.method == 'POST':
-        store_data = JSONParser().parse(request)
-        store_serializer = StoreSerializer(data=store_data)
-        if StoreSerializer.is_valid():
-            StoreSerializer.save()
-            return JsonResponse("Added", safe=False)
-        return JsonResponse("Failed", safe=False)
+def getStore(request):
+    all_Stores = Stores.objects.all()
+    print(all_Stores)
+    return Response(all_Stores)
+ 
+# def getStores(request):
+#     if request.method == 'GET':
+#         store = Stores.objects.all()
+#         print(store)
+#         store_serializer = StoreSerializer(store, many=True)
+#         return JsonResponse(store_serializer.data, safe=False)
+#     elif request.method == 'POST':
+#         store_data = JSONParser().parse(request)
+#         store_serializer = StoreSerializer(data=store_data)
+#         if StoreSerializer.is_valid():
+#             StoreSerializer.save()
+#             return JsonResponse("Added", safe=False)
+#         return JsonResponse("Failed", safe=False)
 
         # with connection.cursor() as cursor:
         #     cursor.execute(
