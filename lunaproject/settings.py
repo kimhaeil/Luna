@@ -79,15 +79,15 @@ TEMPLATES = [
 
 DATABASES = {
     'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'BikeStores',
+        'ENGINE': 'mssql',
+        'NAME': 'VIZEN',
         'USER': 'sa',
         'PASSWORD': '@VIZEN5822511',
-        'HOST': 'localhost\SQLEXPRESS',
-        'PORT': '',
+        'HOST': 'localhost',
+        'PORT': '1433',
 
         'OPTIONS': {
-                'driver': 'ODBC Driver 13 for SQL Server',
+                'driver': 'ODBC Driver 17 for SQL Server',
         },
     },
 }

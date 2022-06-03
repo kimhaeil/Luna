@@ -11,7 +11,7 @@ import Chart from "./Chart";
 import Summary from "./Summary";
 import DistributionChart from "./DistributionChart";
 import UsageChart from "./UsageChart";
-import  Store  from "./DataInterface";
+import InspectionPouchList  from "./DataInterface";
 
 function App() {
   return (
@@ -72,8 +72,9 @@ function App() {
           </Paper>
         </Grid>
       </Grid>
-      <Store/>
+      <InspectionPouchList></InspectionPouchList>
     </Container>
+    
   );
 }
 export default App;
