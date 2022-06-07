@@ -17,18 +17,7 @@ class Stores extends Component{
 
         console.log("this constructor");
     }
-    
-    componentDidMount(){
-        fetch('http://127.0.0.1:8000/select/')
-                .then(response => response.json())
-                .then((response) => {
-                    this.setState({
-                        store_id : response.store_id
-                    })
-                });
-
-
-    }
+ 
 
     componentDidUpdate(){
         console.log("Did Update")
