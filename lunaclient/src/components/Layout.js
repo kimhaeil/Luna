@@ -5,13 +5,20 @@ import React, { useState } from 'react';
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 
+import DrawChart from './Chart'
+
 const buttons = [
   <Button key="one">Dashboard</Button>,
   <Button key="two">Amout of work done</Button>,
   <Button key="three">M List</Button>,
 ];
 
+function click_Search(){
+  console.log("Click_Search");
+}
+
 export default function Layout(){
+
     return (
       <React.Fragment>
         <Box
@@ -50,7 +57,7 @@ export default function Layout(){
             >
               {buttons}
             </ButtonGroup>
-            <Button variant='outlined'>Search</Button>
+            <Button variant='outlined' onClick={click_Search}>Search</Button>
 
           </Stack>
         </Box>
