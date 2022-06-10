@@ -26,13 +26,13 @@ const theme = createTheme({
 
 function App() {
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box>
       <Grid container spacing={2}>
         <Grid item xs={2}>
           <Layout/>
         </Grid>
-        <Grid item xs={10}>
-          <Chart/>
+        <Grid item xs={8}>
+          {/* <Chart/> */}
         </Grid>
       </Grid>
     </Box>

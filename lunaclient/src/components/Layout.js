@@ -7,6 +7,9 @@ import Stack from '@mui/material/Stack';
 
 import DrawChart from './Chart'
 
+import Content from './Content'
+
+
 const buttons = [
   <Button key="one">Dashboard</Button>,
   <Button key="two">Amout of work done</Button>,
@@ -15,6 +18,13 @@ const buttons = [
 
 function click_Search(){
   console.log("Click_Search");
+}
+
+class Layout extends Component{
+    constructor(props){
+        super(props);
+        this.state ={type: 'selectedType'}
+    }
 }
 
 export default function Layout(){
