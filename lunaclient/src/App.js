@@ -17,25 +17,18 @@ import Layout from "./components/Layout";
 import Chart from "./components/Chart";
 
 const theme = createTheme({
-  palette: {
-    primary: {
-      main: "#fefefe",
+    palette: {
+        primary: {
+            main: "#fefefe",
+        },
     },
-  },
 });
 
 function App() {
-  return (
-    <Box>
-      <Grid container spacing={2}>
-        <Grid item xs={2}>
-          <Layout/>
-        </Grid>
-        <Grid item xs={8}>
-          {/* <Chart/> */}
-        </Grid>
-      </Grid>
-    </Box>
-  );
+    return (
+        <Box>
+            <Layout />
+        </Box>
+    );
 }
 export default App;
