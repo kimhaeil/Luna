@@ -1,29 +1,31 @@
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
-import Box from "@mui/material/Box";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import TextField from "@mui/material/TextField";
 import Stack from "@mui/material/Stack";
 import { Grid } from "@mui/material";
-import DrawChart from "./Chart";
 
-import Content from "./Content";
-import Chart from "./Chart";
-import { Container } from "@mui/system";
+import {ContentDashBoard} from "./Content";
+
+
 
 
 
 export default function Layout() {
- 
+    
     const [isShown, setIsShow] = useState(false);
+    const [content, setContent] = useState();
 
     const click_Search = (event) => {
         setIsShow((current) => !current);
     };
 
-    const click_dashboard = (event) =>{
-        setIsShow((current) => !current);
-    };
+    
+
+    function click_dashboard(){
+        console.log("Click Dashboard Btn");
+        setContent(ContentDashBoard())
+    }
 
     const buttons = [
         <Button key="one" onClick={click_dashboard}>Dashboard</Button>,
@@ -73,7 +75,6 @@ export default function Layout() {
                             </Stack>
                         </Grid>
                         <Grid item xs={10}>
-                            {isShown &&<Content />}
                         </Grid>
                     </Grid>
                 </Grid>
