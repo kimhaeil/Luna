@@ -1,15 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import Chart from "./Chart"
 
-
-class Content extends Component{
-    render(){
-        console.log("Content Page Loaded");
-        return(
-            <div>
-                Content Page Loaded
-            </div>
-        );
-    }
+export const ContentDashBoard = () =>{
+    console.log("Call Dashboard");
+    return <Chart/>
 }
 
-export default Content;
