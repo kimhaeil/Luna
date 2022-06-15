@@ -1,34 +1,27 @@
 import "./App.css";
 
 //#region  MUI
+import { Box } from "@material-ui/core";
 import { Container, Grid } from "@mui/material";
-import Paper from "@mui/material/Paper";
-import { Box, createTheme, ThemeProvider } from "@material-ui/core";
-
+import CssBaseline from '@mui/material/CssBaseline';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
 //#endregion
 
-import Dashboard from "./Dashboard";
-
-import Summary from "./Summary";
-import DistributionChart from "./DistributionChart";
-import UsageChart from "./UsageChart";
-import Store  from "./DataInterface";
 import Layout from "./components/Layout";
 import Chart from "./components/Chart";
-
-const theme = createTheme({
-    palette: {
-        primary: {
-            main: "#fefefe",
-        },
-    },
-});
+import {mainListItems} from "./components/mainListItems";
 
 function App() {
-    return (
-        <Box>
-            <Layout />
-        </Box>
-    );
+  return (
+  <Box sx={{ display: "flex" }}>
+    <CssBaseline />
+    <Drawer variant="permanent">
+        <List component="nav">
+            {mainListItems}
+        </List>
+    </Drawer>
+  </Box>
+  )
 }
 export default App;
