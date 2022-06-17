@@ -18,6 +18,7 @@ import LayersIcon from '@mui/icons-material/Layers';
 //#endregion
 
 import Chart from "./components/Chart";
+import RealErrorList from "./components/RealErrorList";
 
 function App() {
     
@@ -77,16 +78,18 @@ function App() {
                 <Container max="lg">
                     <Grid container spacing={3}>
                         <Grid item xs={12}>
-                            <Paper
-                                sx={{
-                                    p: 2,
-                                    display: "flex",
-                                    flexDirection: "column",
-                                    height: 300,
-                                }}
-                            >
-                                {isShown && <Chart />}
-                            </Paper>
+                            {isShown && (
+                                <Paper
+                                    sx={{
+                                        p: 2,
+                                        display: "flex",
+                                        flexDirection: "column",
+                                        height: 300,
+                                    }}
+                                >
+                                    <RealErrorList />
+                                </Paper>
+                            )}
                         </Grid>
                     </Grid>
                 </Container>
