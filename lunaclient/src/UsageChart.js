@@ -23,7 +23,7 @@ export default function UsageChart() {
   return (
     <React.Fragment>
       <Title>Most usage medi.</Title>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer height={400}>
         <ScatterChart
           width={400}
           height={400}
