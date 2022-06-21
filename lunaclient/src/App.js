@@ -28,6 +28,7 @@ import Chart from "./components/Chart";
 import RealErrorList from "./components/RealErrorList";
 import FailedMedicineChart from "./components/BarChart";
 import Dashboard from "./components/Dashboard";
+import ToVerifyMdList from "./components/ToVerifyMdList";
 
 
 const useStyles = makeStyles({
@@ -81,7 +82,7 @@ function App() {
                                 </ListItemIcon>
                                 <ListItemText primary="Etc1" />
                             </ListItemButton>
-                            <ListItemButton>
+                            <ListItemButton component={RouteLink} to="/ToVerifyMdList">
                                 <ListItemIcon>
                                     <LayersIcon />
                                 </ListItemIcon>
@@ -121,6 +122,11 @@ function App() {
                                             exact
                                             path="/Home"
                                             element={<Dashboard/>}
+                                        />
+                                         <Route
+                                            exact
+                                            path="/ToVerifyMdList"
+                                            element={<ToVerifyMdList/>}
                                         />
                                     </Routes>
                                 </Paper>
