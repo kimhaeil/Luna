@@ -1,23 +1,39 @@
 import React, { useState } from "react";
-import { DateRange } from 'react-date-range';
+import DatePicker from "react-datepicker";
+import Box from "@mui/material/Box";
+import "react-datepicker/dist/react-datepicker.css";
+import { Directions } from "@material-ui/icons";
+import CssBaseline from "@mui/material/CssBaseline";
 
 export default function PeriodConditions() {
-    const [state, setState] = useState([
-        {
-            startDate: new Date(),
-            endDate: null,
-            key: "selection",
-        },
-    ]);
+    const [startDate, setStartDate] = useState(new Date("2022/06/22"));
+    const [endDate, setEndDate] = useState(new Date("2022/06/23"));
 
     return (
         <React.Fragment>
-            <DateRange
-                editableDateInputs={true}
-                onChange={(item) => setState([item.selection])}
-                moveRangeOnFirstSelection={false}
-                range={state}
-            />
+            <Box sx={{ 
+                display: "flex", 
+                flexDirection: { xs: "column" },
+                alignItems: 'center',
+                p: 2
+         }}>
+                <DatePicker
+                    selected={startDate}
+                    onChange={(date) => setStartDate(date)}
+                    selectsStart
+                    startDate={startDate}
+                    endDate={endDate}
+                />
+                <Box>~</Box>
+                <DatePicker
+                    selected={endDate}
+                    onChange={(date) => setEndDate(date)}
+                    selectsStart
+                    startDate={startDate}
+                    endDate={endDate}
+                    minDate={startDate}
+                />
+            </Box>
         </React.Fragment>
     );
 }
