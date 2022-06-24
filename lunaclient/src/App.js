@@ -17,11 +17,10 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import PeopleIcon from "@mui/icons-material/People";
 import BarChartIcon from "@mui/icons-material/BarChart";
 import LayersIcon from "@mui/icons-material/Layers";
-import { makeStyles } from "@material-ui/core/styles";
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import AlignVerticalTopIcon from '@mui/icons-material/AlignVerticalTop';
 //#endregion
 
 //Component
@@ -65,7 +64,7 @@ function App() {
                                     to="/ErrList"
                                 >
                                     <ListItemIcon>
-                                        <ShoppingCartIcon />
+                                        <FormatListBulletedIcon />
                                     </ListItemIcon>
                                     <ListItemText primary="Medicine List" />
                                 </ListItemButton>
@@ -74,7 +73,7 @@ function App() {
                                     to="/BarChart"
                                 >
                                     <ListItemIcon>
-                                        <PeopleIcon />
+                                        <AlignVerticalTopIcon />
                                     </ListItemIcon>
                                     <ListItemText primary="Rear Error Medicine List" />
                                 </ListItemButton>

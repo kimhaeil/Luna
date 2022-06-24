@@ -12,6 +12,7 @@ import Chart from "./Chart";
 import Summary from "../Summary";
 import UsageChart from "../UsageChart";
 import {ResponsiveContainer } from 'recharts';
+import RadarChart from "./RadarChart";
 
 function DashboardContent() {
     return (
@@ -38,7 +39,7 @@ function DashboardContent() {
                             height: 350,
                         }}
                     >
-                        <Chart />
+                        <RadarChart />
                     </Paper>
                 </Grid>
                 <Grid item xs={12}>

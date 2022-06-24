@@ -7,7 +7,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import PeopleIcon from '@mui/icons-material/People';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import LayersIcon from '@mui/icons-material/Layers';
-
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
 
 
 export const mainListItems = (
@@ -20,7 +20,7 @@ export const mainListItems = (
       </ListItemButton>
       <ListItemButton>
         <ListItemIcon>
-          <ShoppingCartIcon />
+          <FormatListBulletedIcon />
         </ListItemIcon>
         <ListItemText primary="Medicine List" />
       </ListItemButton>

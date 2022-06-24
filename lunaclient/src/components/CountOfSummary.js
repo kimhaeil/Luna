@@ -19,7 +19,7 @@ const theme = createTheme({
     },
 });
 
-export default function CountOfSummary(){
+export default function CountOfSummary({title, rate, value, total}){
     return(
         <ThemeProvider theme={theme}>
         <Box
@@ -28,19 +28,18 @@ export default function CountOfSummary(){
                 boxShadow: 4,
                 borderRadius: 4,
                 p: 1,
-                width: 230,
+                width: 210,
             }}
         >
-            <Box sx={{ color: "text.secondary" }}>To Verify(%)</Box>
+            <Box sx={{ color: "text.secondary" }}>{title}</Box>
             <Box
                 sx={{
                     color: "text.primary",
                     fontSize: 34,
                     fontWeight: "medium",
-                    fontWeight: "bold",
                 }}
             >
-                34.04%
+                {rate}
             </Box>
             <Box
                 sx={{
@@ -50,7 +49,7 @@ export default function CountOfSummary(){
                     fontSize: 14,
                 }}
             >
-               27664(To Verify)/81295(Total)
+               {value}/{total}
             </Box>
         </Box>
     </ThemeProvider>
