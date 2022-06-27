@@ -13,6 +13,7 @@ import Summary from "../Summary";
 import UsageChart from "../UsageChart";
 import {ResponsiveContainer } from 'recharts';
 import RadarChart from "./RadarChart";
+import InspectionTrendOfDate from './InspectionTrendOfDate';
 
 function DashboardContent() {
     return (
@@ -48,6 +49,14 @@ function DashboardContent() {
                     >
                         <UsageChart />
                     </Paper>
+                </Grid>
+                <Grid item xs={12}>
+                    <Paper
+                        sx={{ p: 2, display: "flex", flexDirection: "column" }}
+                    >
+                        <InspectionTrendOfDate />
+                    </Paper>
+
                 </Grid>
             </Grid>
         </React.Fragment>
