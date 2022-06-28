@@ -14,6 +14,7 @@ import UsageChart from "../UsageChart";
 import {ResponsiveContainer } from 'recharts';
 import RadarChart from "./RadarChart";
 import InspectionTrendOfDate from './InspectionTrendOfDate';
+import TopOfList from './TopOfList';
 
 function DashboardContent() {
     return (
@@ -47,7 +48,7 @@ function DashboardContent() {
                     <Paper
                         sx={{ p: 2, display: "flex", flexDirection: "column" }}
                     >
-                        <UsageChart />
+                        <TopOfList />
                     </Paper>
                 </Grid>
                 <Grid item xs={12}>

@@ -46,7 +46,7 @@ export default function CountOfSummary({title, rate, value, total}){
                     color: "success.dark",
                     display: "inline",
                     mx: 0.5,
-                    fontSize: 14,
+                    fontSize: 12,
                 }}
             >
                {value}/{total}

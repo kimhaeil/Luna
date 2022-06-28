@@ -22,16 +22,16 @@ export default function Summary() {
         <Title>Summary</Title>
         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
           <Grid item xs={6}>
-            <CountOfSummary title="To Verify" rate="34.5%" value={12341} total={45234} />
+            <CountOfSummary title="To Verify" rate="4.93%" value={104} total={2108} />
           </Grid>
           <Grid item xs={6}>
-            <CountOfSummary title="Real Error" rate="6.7%" value={1235} total={24563} />
+            <CountOfSummary title="Real Error" rate="0.43%" value={9} total={2108} />
           </Grid>
           <Grid item xs={6}>
-            <CountOfSummary title="False Positive" rate="3.2%" value={125} total={6654} />
+            <CountOfSummary title="False Positive" rate="3.2%" value="104(toVerify)-9(RealError)" total={2108} />
           </Grid>
           <Grid item xs={6}>
-            <CountOfSummary title="False Negative" rate="0.2%" value={2} total={5663} />
+            <CountOfSummary title="False Negative" rate="0.02%" value={2} total={5663} />
           </Grid>
         </Grid>
       </Box>

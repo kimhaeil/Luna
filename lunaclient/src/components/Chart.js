@@ -30,13 +30,13 @@ const data = [
 export default function Chart() {
   const theme = useTheme();
 
-  const data = fetch("http://127.0.0.1:8000/select/").then((response) =>
-    response.json()
-  );
+//   const data = fetch("http://127.0.0.1:8000/select/").then((response) =>
+//     response.json()
+//   );
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Validation trend of date</Title>
       <ResponsiveContainer height={300}>
         <LineChart
           data={data}
