@@ -80,12 +80,11 @@ TEMPLATES = [
 DATABASES = {
     'default': {
         'ENGINE': 'mssql',
-        'NAME': 'AdventureWorksDW2019',
+        'NAME': 'BikeStores',
         'USER': 'sa',
         'PASSWORD': '@VIZEN5822511',
         'HOST': 'localhost\SQLEXPRESS',
         'PORT': '1433',
-
         'OPTIONS': {
                 'driver': 'ODBC Driver 17 for SQL Server',
         },
