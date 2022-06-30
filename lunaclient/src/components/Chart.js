@@ -53,12 +53,18 @@ function getData(url="", data={}){
 export default function Chart() {
   const theme = useTheme();
 
+<<<<<<< HEAD
   const data = getData("http://127.0.0.1:8000/select/", {params : 'temp'})
   
+=======
+//   const data = fetch("http://127.0.0.1:8000/select/").then((response) =>
+//     response.json()
+//   );
+>>>>>>> b9b44522410022e054739431e82e0962518a3977
 
   return (
     <React.Fragment>
-      <Title>Today</Title>
+      <Title>Validation trend of date</Title>
       <ResponsiveContainer height={300}>
         <LineChart
           data={data}

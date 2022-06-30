@@ -52,7 +52,7 @@ function App() {
                                 <PeriodConditions />
                                 <ListItemButton
                                     component={RouteLink}
-                                    to="/Chart"
+                                    to="/Dashboard"
                                 >
                                     <ListItemIcon>
                                         <DashboardIcon />
@@ -66,7 +66,7 @@ function App() {
                                     <ListItemIcon>
                                         <FormatListBulletedIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Medicine List" />
+                                    <ListItemText primary="Inspection result of batch" />
                                 </ListItemButton>
                                 <ListItemButton
                                     component={RouteLink}
@@ -79,12 +79,12 @@ function App() {
                                 </ListItemButton>
                                 <ListItemButton
                                     component={RouteLink}
-                                    to="/Home"
+                                    to="/Chart"
                                 >
                                     <ListItemIcon>
                                         <BarChartIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Etc1" />
+                                    <ListItemText primary="Validation trend of date" />
                                 </ListItemButton>
                                 <ListItemButton
                                     component={RouteLink}
@@ -93,7 +93,7 @@ function App() {
                                     <ListItemIcon>
                                         <LayersIcon />
                                     </ListItemIcon>
-                                    <ListItemText primary="Etc2" />
+                                    <ListItemText primary="Real error medicine list" />
                                 </ListItemButton>
                             </React.Fragment>
                         </List>
@@ -131,7 +131,7 @@ function App() {
                                             />
                                             <Route
                                                 exact
-                                                path="/Home"
+                                                path="/Dashboard"
                                                 element={<Dashboard />}
                                             />
                                             <Route

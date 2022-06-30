@@ -35,8 +35,8 @@ export default function UsageChart() {
           }}
         >
           <CartesianGrid />
-          <XAxis type="number" dataKey="x" name="stature" unit="cm" />
-          <YAxis type="number" dataKey="y" name="weight" unit="kg" />
+          <XAxis type="number" dataKey="x" name="count" unit="" />
+          <YAxis type="number" dataKey="y" name="weight" unit="" />
           <Tooltip cursor={{ strokeDasharray: "3 3" }} />
           <Scatter name="A school" data={data} fill="#8884d8" />
         </ScatterChart>
