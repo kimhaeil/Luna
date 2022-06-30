@@ -27,6 +27,8 @@ def getStores(request):
                 result.append(dict(zip(keys,row)))
             resultJson = json.dumps(result)
         return HttpResponse(resultJson, content_type="application/json")
+    elif request.method == 'POST':
+        print(request);
 
 
 

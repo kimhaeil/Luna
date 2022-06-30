@@ -27,12 +27,34 @@ const data = [
   createData("24:00", 2600),
 ];
 
+
+
+function getData(url="", data={}){
+  console.log(JSON.stringify(data));
+  return fetch(url, {
+    method: 'POST',
+    mode: 'cors',
+    cache: 'no-cache',
+    credentials: 'same-origin',
+    headers:{
+      'Content-Type':'application/json',
+    },
+    body: JSON.stringify(data),
+
+  }).then(response => response.json())
+  .then((response) => {
+    if(!response.ok){
+      throw new Error('Network error');
+    }
+    return response.blob()
+  });
+}
+
 export default function Chart() {
   const theme = useTheme();
 
-  const data = fetch("http://127.0.0.1:8000/select/").then((response) =>
-    response.json()
-  );
+  const data = getData("http://127.0.0.1:8000/select/", {params : 'temp'})
+  
 
   return (
     <React.Fragment>
