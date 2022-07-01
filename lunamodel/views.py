@@ -1,3 +1,4 @@
+from contextlib import nullcontext
 from urllib import response
 import django
 from django.http import HttpResponse
@@ -32,17 +33,21 @@ def getStores(request):
 
 
 
-# @api_view(['GET', 'POST'])
-# @csrf_exempt
-# def getInspectionPouchList(request):
-#     if request.method == 'GET':
-#         with connection.cursor() as cursor:
-#             cursor.execute(
-#                 "SELECT TOP (1000) * FROM inspection_pouch_list")
-#             rows = cursor.fetchall()
-#             result = []
-#             keys = ('inspection_pouch_id', 'inspection_group_id', 'inspection_time', 'pouch_barcode', 'image_file_name', 'state', 'inspection_retry')
-#             for row in rows:
-#                 result.append(dict(zip(keys,row)))
-#             resultJson = json.dumps(result, cls=DjangoJSONEncoder)
-#         return HttpResponse(resultJson, content_type="application/json")
+@api_view(['GET', 'POST'])
+@csrf_exempt
+def getInspectionPouchList(request):
+    if request.method == 'GET':
+        with connection.cursor() as cursor:
+            cursor.execute(
+                "SELECT TOP (1000) * FROM inspection_pouch_list")
+            rows = cursor.fetchall()
+            result = []
+            keys = ('inspection_pouch_id', 'inspection_group_id', 'inspection_time', 'pouch_barcode', 'image_file_name', 'state', 'inspection_retry')
+            for row in rows:
+                result.append(dict(zip(keys,row)))
+            resultJson = json.dumps(result, cls=DjangoJSONEncoder)
+        return HttpResponse(resultJson, content_type="application/json")
+    elif request.method == 'POST':
+        guid = json.loads(request.body.decode('utf-8'))
+        print(guid)
+        return HttpResponse(guid, content_type="application/json");

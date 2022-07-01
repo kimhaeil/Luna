@@ -4,5 +4,6 @@ from django.urls import path
 from lunamodel import views
 
 urlpatterns = [
-    path('select/', views.getStores)
+    path('selectStores/', views.getStores),
+    path('selectPouchList/', views.getInspectionPouchList)
 ]
