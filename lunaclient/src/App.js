@@ -30,6 +30,7 @@ import FailedMedicineChart from "./components/BarChart";
 import Dashboard from "./components/Dashboard";
 import ToVerifyMdList from "./components/ToVerifyMdList";
 import PeriodConditions from "./components/PeriodConditions";
+import Login from "./pages/Login";
 
 
 function App() {
@@ -95,6 +96,11 @@ function App() {
                                     </ListItemIcon>
                                     <ListItemText primary="Real error medicine list" />
                                 </ListItemButton>
+                                <ListItemButton
+                                    component={RouteLink}
+                                    to="/Login">
+                                         <ListItemText primary="Login" />
+                                </ListItemButton>
                             </React.Fragment>
                         </List>
                     </Drawer>
@@ -138,6 +144,11 @@ function App() {
                                                 exact
                                                 path="/ToVerifyMdList"
                                                 element={<ToVerifyMdList />}
+                                            />
+                                            <Route
+                                                exact
+                                                path="/Login"
+                                                element={<Login />}
                                             />
                                         </Routes>
                                     </Paper>
