@@ -1,8 +1,26 @@
 import { Box, Button, TextField } from '@mui/material';
-import React from 'react';
+import React, {useState, useEffect}from 'react';
 
 
 export default function Login(){
+    
+    const [inputId, setinputId] = useState('')
+    const [inputPw, setinputPw] = useState('')
+    
+    const handleInputID = (arg) =>{
+        console.log(arg.target.value)
+        setinputId(arg.target.value)
+    }
+
+    const handleInputPW = (arg) =>{
+        console.log(arg.target.value)
+        setinputPw(arg.target.value)
+    }
+
+    const onClickLogin = () =>{
+        console.log('Clicked Login')
+    }
+
     return (
         <React.Fragment>
            <Box
@@ -14,12 +32,12 @@ export default function Login(){
             minHeight:'100%'
            }}
            >
-            <TextField variant="outlined" label="Id" fullWidth />
-            <TextField variant="outlined" label="password" type="password" fullWidth />
+            <label>ID:</label>
+            <input type='text' name='input_id' value={inputId} onChange={handleInputID}/>
+            <label>PW:</label>
+            <input type='password' name='input_pw' value={inputPw} onChange={handleInputPW}/>
             <Box>
-                <Button>
-                    Login
-                </Button>
+                <button type='button' onClick={onClickLogin}>Login</button>
             </Box>
            </Box>
         
