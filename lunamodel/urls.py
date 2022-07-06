@@ -5,5 +5,6 @@ from lunamodel import views
 
 urlpatterns = [
     path('selectStores/', views.getStores),
-    path('selectPouchList/', views.getInspectionPouchList)
+    path('selectPouchList/', views.getInspectionPouchList),
+    path('tryLogin/', views.login)
 ]

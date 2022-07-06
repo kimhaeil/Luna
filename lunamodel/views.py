@@ -51,3 +51,13 @@ def getInspectionPouchList(request):
         guid = json.loads(request.body.decode('utf-8'))
         print(guid)
         return HttpResponse(guid, content_type="application/json");
+
+   
+@api_view(['GET', 'POST'])
+@csrf_exempt    
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+        print(username)
+        print(password)
