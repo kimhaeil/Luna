@@ -5,6 +5,19 @@ import React, {
   useRef,
 } from "react";
 
+const useConfirm = (message ="", callback) => {
+  if(typeof callback !== "function"){
+    return;
+  }
+
+  const confirmAction = () =>{
+    if(window.confirm(message)){
+      callback();
+    }
+  }
+  return confirmAction;
+}
+
 const useClick = (onClick) => {
   const element = useRef();
   useEffect(() => {
@@ -63,6 +76,9 @@ export default function Login() {
   const onClick = () => console.log("hellog");
   const login = useClick(onClick);
 
+  const tryLogin = () => console.log("R u sure want to log in?")
+  const confirmLogin = useConfirm("Are you sure", tryLogin)
+
   return (
     <React.Fragment>
       <Box
@@ -80,7 +96,7 @@ export default function Login() {
         <input type="password" name="input_pw" />
 
         <Box>
-          <button ref={login} type="button">
+          <button ref={login} type="button" onClick={confirmLogin}>
             Login
           </button>
         </Box>
