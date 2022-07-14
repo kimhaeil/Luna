@@ -30,7 +30,7 @@ import FailedMedicineChart from "./components/BarChart";
 import Dashboard from "./components/Dashboard";
 import ToVerifyMdList from "./components/ToVerifyMdList";
 import PeriodConditions from "./components/PeriodConditions";
-import Login from "./pages/Login";
+import AuthTemplate from "./pages/Auth/AuthTemplate"
 
 
 function App() {
@@ -98,7 +98,7 @@ function App() {
                                 </ListItemButton>
                                 <ListItemButton
                                     component={RouteLink}
-                                    to="/Login">
+                                    to="/AuthTemplate">
                                          <ListItemText primary="Login" />
                                 </ListItemButton>
                             </React.Fragment>
@@ -147,8 +147,8 @@ function App() {
                                             />
                                             <Route
                                                 exact
-                                                path="/Login"
-                                                element={<Login />}
+                                                path="/AuthTemplate"
+                                                element={<AuthTemplate />}
                                             />
                                         </Routes>
                                     </Paper>
