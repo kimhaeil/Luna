@@ -31,6 +31,7 @@ import Dashboard from "./components/Dashboard";
 import ToVerifyMdList from "./components/ToVerifyMdList";
 import PeriodConditions from "./components/PeriodConditions";
 import AuthTemplate from "./pages/Auth/AuthTemplate"
+import AuthForm from "./pages/Auth/AuthForm"
 
 
 function App() {
@@ -98,7 +99,7 @@ function App() {
                                 </ListItemButton>
                                 <ListItemButton
                                     component={RouteLink}
-                                    to="/AuthTemplate">
+                                    to="/AuthForm">
                                          <ListItemText primary="Login" />
                                 </ListItemButton>
                             </React.Fragment>
@@ -147,8 +148,8 @@ function App() {
                                             />
                                             <Route
                                                 exact
-                                                path="/AuthTemplate"
-                                                element={<AuthTemplate />}
+                                                path="/AuthForm"
+                                                element={<AuthForm />}
                                             />
                                         </Routes>
                                     </Paper>
