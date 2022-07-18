@@ -13,13 +13,26 @@ const AuthTemplateBlock = styled.div`
     aligh-items: center;
 `;
 
-const WhiteBox = styled.div``;
+const WhiteBox = styled.div`
+    .logo-area {
+        display: block;
+        padding-bottom: 2rem;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.025);
+    padding: 2rem;
+    width: 360px;
+    background: white;
+    border-radius: 2px;
+`;
 
 const AuthTemplate = ({children}) =>{
     return (
         <AuthTemplateBlock>
             <WhiteBox>
-                <div className=''>
+                <div className='logo-area'>
                     <Link to="/">to go</Link>
                 </div>
                 {children}
