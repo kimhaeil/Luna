@@ -2,6 +2,8 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Button from "../../common/Button";
 import palette from '../../lib/styles/palette';
+
+
 const AuthFormBlock = styled.div`
   h3 {
     margin: 0;
@@ -46,23 +48,41 @@ const Footer = styled.div`
 
 const ButtonWithMaringTop = styled(Button)`margin-top :5rem;`;
 
+const textMap = {
+  login: 'Log in',
+  register: 'Sign in'
+}
 
-const AuthForm = () =>{
+const AuthForm = ({type}) =>{
+    console.log(type)
+    const text = textMap[type];
     return(
         <AuthFormBlock>
             <h3>Log</h3>
             <form>
                 <StyledInput autoComplete="userid" name="username" placeholder="id"/>
                 <StyledInput
-                    autoComplete="newpassword"
+                    autoComplete="new-password"
                     name="password"
                     placeholder="pw"
                     type="password"
                 />
-                <ButtonWithMaringTop cyan fullWidth>Login</ButtonWithMaringTop>
+                {type === 'register' && (
+                  <StyledInput
+                    autoComplete="new-password"
+                    name="passwordConfirm"
+                    placeholder="비밀번호 확인"
+                    type="password"
+                  />
+                )}
+                <ButtonWithMaringTop cyan fullWidth>{text}</ButtonWithMaringTop>
             </form>
             <Footer>
-                <Link to="/register">Sing in</Link>
+                {type === 'login' ?(
+                  <Link to="/register">Sing in</Link>
+                ) : (
+                  <Link to="/login">Log in</Link>
+                )}
             </Footer>
         </AuthFormBlock>
     )
