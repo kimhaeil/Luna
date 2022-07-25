@@ -30,9 +30,8 @@ import FailedMedicineChart from "./components/BarChart";
 import Dashboard from "./components/Dashboard";
 import ToVerifyMdList from "./components/ToVerifyMdList";
 import PeriodConditions from "./components/PeriodConditions";
-import AuthTemplate from "./pages/Auth/AuthTemplate"
-import AuthForm from "./pages/Auth/AuthForm"
 
+import LoginPage from './pages/LoginPage';
 
 function App() {
 
@@ -99,8 +98,8 @@ function App() {
                                 </ListItemButton>
                                 <ListItemButton
                                     component={RouteLink}
-                                    to="/AuthForm">
-                                         <ListItemText primary="Login" />
+                                    to="/LoginPage">
+                                         <ListItemText primary="LoginPage" />
                                 </ListItemButton>
                             </React.Fragment>
                         </List>
@@ -148,8 +147,8 @@ function App() {
                                             />
                                             <Route
                                                 exact
-                                                path="/AuthForm"
-                                                element={<AuthForm />}
+                                                path="/login"
+                                                element={<LoginPage />}
                                             />
                                         </Routes>
                                     </Paper>
