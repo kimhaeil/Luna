@@ -44,7 +44,6 @@ function App() {
 
     return (
         <React.Fragment>
-            <BrowserRouter>
                 <Box sx={{ display: "flex" }}>
                     <CssBaseline />
                     <Drawer variant="permanent">
@@ -157,7 +156,6 @@ function App() {
                         </Container>
                     </Box>
                 </Box>
-            </BrowserRouter>
         </React.Fragment>
     );
 }
