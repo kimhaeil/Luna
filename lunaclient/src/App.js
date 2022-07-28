@@ -33,6 +33,10 @@ import PeriodConditions from "./components/PeriodConditions";
 
 import LoginPage from './pages/LoginPage';
 
+//Todo App
+import TodoTemplate from './components/Todo/TodoTemplate'
+import TodoInsert from './components/Todo/TodoInsert'
+
 function App() {
 
     const [isShown, setIsShow] = useState(false);
@@ -43,120 +47,123 @@ function App() {
     };
 
     return (
-        <React.Fragment>
-                <Box sx={{ display: "flex" }}>
-                    <CssBaseline />
-                    <Drawer variant="permanent">
-                        <List component="nav">
-                            <React.Fragment>
-                                <PeriodConditions />
-                                <ListItemButton
-                                    component={RouteLink}
-                                    to="/Dashboard"
-                                >
-                                    <ListItemIcon>
-                                        <DashboardIcon />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Dashboard" />
-                                </ListItemButton>
-                                <ListItemButton
-                                    component={RouteLink}
-                                    to="/ErrList"
-                                >
-                                    <ListItemIcon>
-                                        <FormatListBulletedIcon />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Inspection result of batch" />
-                                </ListItemButton>
-                                <ListItemButton
-                                    component={RouteLink}
-                                    to="/BarChart"
-                                >
-                                    <ListItemIcon>
-                                        <AlignVerticalTopIcon />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Rear Error Medicine List" />
-                                </ListItemButton>
-                                <ListItemButton
-                                    component={RouteLink}
-                                    to="/Chart"
-                                >
-                                    <ListItemIcon>
-                                        <BarChartIcon />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Validation trend of date" />
-                                </ListItemButton>
-                                <ListItemButton
-                                    component={RouteLink}
-                                    to="/ToVerifyMdList"
-                                >
-                                    <ListItemIcon>
-                                        <LayersIcon />
-                                    </ListItemIcon>
-                                    <ListItemText primary="Real error medicine list" />
-                                </ListItemButton>
-                                <ListItemButton
-                                    component={RouteLink}
-                                    to="/LoginPage">
-                                         <ListItemText primary="LoginPage" />
-                                </ListItemButton>
-                            </React.Fragment>
-                        </List>
-                    </Drawer>
-                    <Box
-                        component="main"
-                        sx={{
-                            flexGrow: 1,
-                        }}
-                    >
-                        <Toolbar />
+        <TodoTemplate>
+            <TodoInsert/>
+        </TodoTemplate>
+        // <React.Fragment>
+        //         <Box sx={{ display: "flex" }}>
+        //             <CssBaseline />
+        //             <Drawer variant="permanent">
+        //                 <List component="nav">
+        //                     <React.Fragment>
+        //                         <PeriodConditions />
+        //                         <ListItemButton
+        //                             component={RouteLink}
+        //                             to="/Dashboard"
+        //                         >
+        //                             <ListItemIcon>
+        //                                 <DashboardIcon />
+        //                             </ListItemIcon>
+        //                             <ListItemText primary="Dashboard" />
+        //                         </ListItemButton>
+        //                         <ListItemButton
+        //                             component={RouteLink}
+        //                             to="/ErrList"
+        //                         >
+        //                             <ListItemIcon>
+        //                                 <FormatListBulletedIcon />
+        //                             </ListItemIcon>
+        //                             <ListItemText primary="Inspection result of batch" />
+        //                         </ListItemButton>
+        //                         <ListItemButton
+        //                             component={RouteLink}
+        //                             to="/BarChart"
+        //                         >
+        //                             <ListItemIcon>
+        //                                 <AlignVerticalTopIcon />
+        //                             </ListItemIcon>
+        //                             <ListItemText primary="Rear Error Medicine List" />
+        //                         </ListItemButton>
+        //                         <ListItemButton
+        //                             component={RouteLink}
+        //                             to="/Chart"
+        //                         >
+        //                             <ListItemIcon>
+        //                                 <BarChartIcon />
+        //                             </ListItemIcon>
+        //                             <ListItemText primary="Validation trend of date" />
+        //                         </ListItemButton>
+        //                         <ListItemButton
+        //                             component={RouteLink}
+        //                             to="/ToVerifyMdList"
+        //                         >
+        //                             <ListItemIcon>
+        //                                 <LayersIcon />
+        //                             </ListItemIcon>
+        //                             <ListItemText primary="Real error medicine list" />
+        //                         </ListItemButton>
+        //                         <ListItemButton
+        //                             component={RouteLink}
+        //                             to="/LoginPage">
+        //                                  <ListItemText primary="LoginPage" />
+        //                         </ListItemButton>
+        //                     </React.Fragment>
+        //                 </List>
+        //             </Drawer>
+        //             <Box
+        //                 component="main"
+        //                 sx={{
+        //                     flexGrow: 1,
+        //                 }}
+        //             >
+        //                 <Toolbar />
 
-                        <Container max="lg">
+        //                 <Container max="lg">
                             
-                            <Grid container spacing={3}>
-                                <Grid item xs={12}>
-                                    <Paper>
-                                        <Routes>
-                                            <Route
-                                                exact
-                                                path="/Chart"
-                                                element={<Chart />}
-                                            />
-                                            <Route
-                                                exact
-                                                path="/ErrList"
-                                                element={<RealErrorList />}
-                                            />
-                                            <Route
-                                                exact
-                                                path="/BarChart"
-                                                element={
-                                                    <FailedMedicineChart />
-                                                }
-                                            />
-                                            <Route
-                                                exact
-                                                path="/Dashboard"
-                                                element={<Dashboard />}
-                                            />
-                                            <Route
-                                                exact
-                                                path="/ToVerifyMdList"
-                                                element={<ToVerifyMdList />}
-                                            />
-                                            <Route
-                                                exact
-                                                path="/login"
-                                                element={<LoginPage />}
-                                            />
-                                        </Routes>
-                                    </Paper>
-                                </Grid>
-                            </Grid>
-                        </Container>
-                    </Box>
-                </Box>
-        </React.Fragment>
+        //                     <Grid container spacing={3}>
+        //                         <Grid item xs={12}>
+        //                             <Paper>
+        //                                 <Routes>
+        //                                     <Route
+        //                                         exact
+        //                                         path="/Chart"
+        //                                         element={<Chart />}
+        //                                     />
+        //                                     <Route
+        //                                         exact
+        //                                         path="/ErrList"
+        //                                         element={<RealErrorList />}
+        //                                     />
+        //                                     <Route
+        //                                         exact
+        //                                         path="/BarChart"
+        //                                         element={
+        //                                             <FailedMedicineChart />
+        //                                         }
+        //                                     />
+        //                                     <Route
+        //                                         exact
+        //                                         path="/Dashboard"
+        //                                         element={<Dashboard />}
+        //                                     />
+        //                                     <Route
+        //                                         exact
+        //                                         path="/ToVerifyMdList"
+        //                                         element={<ToVerifyMdList />}
+        //                                     />
+        //                                     <Route
+        //                                         exact
+        //                                         path="/login"
+        //                                         element={<LoginPage />}
+        //                                     />
+        //                                 </Routes>
+        //                             </Paper>
+        //                         </Grid>
+        //                     </Grid>
+        //                 </Container>
+        //             </Box>
+        //         </Box>
+        // </React.Fragment>
     );
 }
 export default App;
