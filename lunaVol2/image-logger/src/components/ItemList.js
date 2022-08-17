@@ -1,4 +1,8 @@
+import { useState, useEffect } from 'react';
 import styled from 'styled-components';
+import axios from '../../node_modules/axios/index';
+import arrayIncludes from '../../node_modules/lodash/_arrayIncludes';
+import NewsItem from './Items';
 import Items from './Items';
 
 const NewsListBlock = styled.div`
@@ -14,24 +18,39 @@ const NewsListBlock = styled.div`
   }
 `;
 
-const article = {
-  title: 'Title',
-  description: 'Contents',
-  url: 'http:naver.com',
-  urlToImage:
-    'https://imgnews.pstatic.net/image/088/2022/08/15/0000770832_001_20220815140801308.jpg?type=w647',
-};
-
 const ItemList = () => {
+  const [articles, setArticles] = useState(null);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      try {
+        const response = await axios.get(
+          'https://newsapi.org/v2/everything?q=apple&from=2022-08-16&to=2022-08-16&sortBy=popularity&apiKey=bddc15ef66ea48e5a30a53e26dbf27f7',
+        );
+        setArticles(response.data.articles);
+      } catch (e) {
+        console.log(e);
+      }
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <NewsListBlock>Wating...</NewsListBlock>;
+  }
+
+  if (!articles) {
+    return null;
+  }
+
   return (
     <NewsListBlock>
-      <Items article={article} />
-      <Items article={article} />
-      <Items article={article} />
-      <Items article={article} />
-      <Items article={article} />
-      <Items article={article} />
-      <Items article={article} />
+      {articles.map((article) => (
+        <NewsItem key={article.url} article={article} />
+      ))}
     </NewsListBlock>
   );
 };
