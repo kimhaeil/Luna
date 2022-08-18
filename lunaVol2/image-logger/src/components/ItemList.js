@@ -18,7 +18,7 @@ const NewsListBlock = styled.div`
   }
 `;
 
-const ItemList = () => {
+const ItemList = ({ category }) => {
   const [articles, setArticles] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -26,8 +26,10 @@ const ItemList = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
+        const query = category === 'all' ? '' : `&category=${category}`;
+        console.log(query);
         const response = await axios.get(
-          'https://newsapi.org/v2/everything?q=apple&from=2022-08-16&to=2022-08-16&sortBy=popularity&apiKey=bddc15ef66ea48e5a30a53e26dbf27f7',
+          `https://newsapi.org/v2/top-headlines?country=kr${query}&apiKey=bddc15ef66ea48e5a30a53e26dbf27f7`,
         );
         setArticles(response.data.articles);
       } catch (e) {
@@ -36,7 +38,7 @@ const ItemList = () => {
       setLoading(false);
     };
     fetchData();
-  }, []);
+  }, [category]);
 
   if (loading) {
     return <NewsListBlock>Wating...</NewsListBlock>;
