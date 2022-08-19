@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from '../../node_modules/axios/index';
-import arrayIncludes from '../../node_modules/lodash/_arrayIncludes';
 import NewsItem from './Items';
-import Items from './Items';
 
 const NewsListBlock = styled.div`
   box-sizing: border-box;
