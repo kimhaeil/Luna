@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'imageloggerapp'
 ]
 
 MIDDLEWARE = [
@@ -76,11 +77,11 @@ WSGI_APPLICATION = 'lunaVol2Svr.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'imageLogger',
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': '5822511',
         'HOST': 'localhost',
-        'PORT': '5432'
+        'PORT': ''
     }
 }
 
