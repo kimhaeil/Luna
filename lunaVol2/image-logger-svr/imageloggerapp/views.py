@@ -4,5 +4,6 @@ from imageloggerapp.models import image_logger
 
 
 def img_info(request):
-    files = image_logger.objects.all()
-    return HttpResponse(files)
+    for e in image_logger.objects.all():
+        print(e)
+    return HttpResponse('Return')
