@@ -6,5 +6,5 @@ from django.urls import include
 from imageloggerapp import views
 
 urlpatterns = [
-
+    path('', views.img_info)
 ]
