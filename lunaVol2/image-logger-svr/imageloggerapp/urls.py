@@ -5,6 +5,12 @@ from django.urls import include
 
 from imageloggerapp import views
 
+from rest_framework import routers
+
+
+router = routers.DefaultRouter()
+router.register(r'imageFileList', views.ImageInfo)
+
 urlpatterns = [
-    path('', views.img_info)
+    path('', include(router.urls))
 ]
