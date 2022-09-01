@@ -5,12 +5,13 @@ from django.urls import include
 
 from imageloggerapp import views
 
-from rest_framework import routers
+from rest_framework.routers import DefaultRouter
+from .views import ImageList
 
-
-router = routers.DefaultRouter()
-router.register(r'imageFileList', views.ImageInfo)
+from imageloggerapp import urls
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('imageList/',  views.ImageList.as_view())
 ]
+urlpatterns = format_suffix_patterns(urlpatterns)
