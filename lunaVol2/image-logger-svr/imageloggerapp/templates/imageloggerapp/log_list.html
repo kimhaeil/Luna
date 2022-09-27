@@ -1,0 +1,40 @@
+{% extends 'imageloggerapp/base.html' %}
+
+{% block title %}<title>게시글 목록</title>{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h2>Log Table</h2>
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Function.</th>
+          <th>ms</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>John</td>
+          <td>Doe</td>
+          <td>john@example.com</td>
+          <td>john@example.com</td>
+        </tr>
+        <tr>
+          <td>Mary</td>
+          <td>Moe</td>
+          <td>mary@example.com</td>
+          <td>john@example.com</td>
+        </tr>
+        <tr>
+          <td>July</td>
+          <td>Dooley</td>
+          <td>july@example.com</td>
+          <td>john@example.com</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}

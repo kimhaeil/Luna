@@ -1,32 +1,25 @@
-<html>
-  <head>
-    <title>Django Girls blog</title>
-  </head>
-  <body>
-    {{ post_list }}
-    <div>
-      <h1><a href="">Django Girls Blog</a></h1>
-    </div>
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+    
+        {% block title %}      <!-- 페이지별 타이틀 공간 -->
+        <title>bbs - minitutorial</title>
+        {% endblock title %}
 
-    <div>
-      <p>published: 14.06.2014, 12:14</p>
-      <h2><a href="">My first post</a></h2>
-      <p>
-        Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-        vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce
-        dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut
-        fermentum massa justo sit amet risus.
-      </p>
-    </div>
+        {% block meta %}    <!-- 페이지별 메타 데이터 공간 -->
+        {% endblock meta %}
 
-    <div>
-      <p>published: 14.06.2014, 12:14</p>
-      <h2><a href="">My second post</a></h2>
-      <p>
-        Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis
-        vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce
-        dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.
-      </p>
-    </div>
-  </body>
+        {% block scripts %}    <!-- 페이지별 스크립트 공간 -->
+        {% endblock scripts %}
+
+        {% block css %}        <!-- 페이지별 css -->
+        {% endblock css %}
+    </head>
+    <body>
+    {% block content %}
+    view: {{ view }} <!-- ctx['view'] -->
+    <br>
+    data: {{ data }}  <!-- ctx['data'] -->
+    {% endblock content %}
+    </body>
 </html>
