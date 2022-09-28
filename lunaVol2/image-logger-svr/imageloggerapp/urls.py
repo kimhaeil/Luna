@@ -10,10 +10,7 @@ from .views import ImageList
 
 from imageloggerapp import urls
 from rest_framework.urlpatterns import format_suffix_patterns
-from .views import line_chart, line_chart_json
 
 urlpatterns = [
-    path('',  views.post_list),
-    path('chart', line_chart, name='line_chart'),
-    path('chartJSON', line_chart_json, name='line_chart_json'),
+    path('',  views.post_list)
 ]

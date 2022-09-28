@@ -31,35 +31,22 @@ def mainpage(request):
     return HttpResponse()
 
 
+
 def post_list(request):
 
+    dataset = [
+    {'ticket_class': 1, 'survived_count': 200, 'not_survived_count': 123},
+    {'ticket_class': 2, 'survived_count': 119, 'not_survived_count': 158},
+    {'ticket_class': 3, 'survived_count': 181, 'not_survived_count': 528}
+    ]
     file_ = open(os.path.join(settings.BASE_DIR, 'test.txt'))
     print(file_.name)
     f = open(file_.name, 'r')
     if f.mode == 'r':
         contents = f.read()
         print(contents)
-    return render(request, 'imageloggerapp/log_list.html', {
-        'post_list': contents
+    return render(request, 'imageloggerapp/chart_list.html', {
+        'dataset': dataset
     })
 
-class LineChartJSONView(BaseLineChartView):
-    def get_labels(self):
-        """Return 7 labels for the x-axis."""
-        return ["January", "February", "March", "April", "May", "June", "July"]
 
-    def get_providers(self):
-        """Return names of datasets."""
-        return ["Central", "Eastside", "Westside"]
-
-    def get_data(self):
-        """Return 3 datasets to plot."""
-
-        return [[75, 44, 92, 11, 44, 95, 35],
-                [41, 92, 18, 3, 73, 87, 92],
-                [87, 21, 94, 3, 90, 13, 65]]
-
-                
-line_chart = TemplateView.as_view(template_name='imageloggerapp/chart_list.html')
-line_chart_json = LineChartJSONView.as_view()
- 

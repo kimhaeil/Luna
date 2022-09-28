@@ -25,9 +25,13 @@
       <div class="content container">
         <div class="row">
           <div class="col-md-8">
+            {% include 'imageloggerapp/data_table.html' %}
             {% block content %} 
             {% endblock %}
           </div>
+          {% comment %} <div>
+            
+          </div> {% endcomment %}
         </div>
       </div>
     </body>
