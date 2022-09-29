@@ -12,5 +12,6 @@ from imageloggerapp import urls
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
-    path('',  views.post_list)
+    path('',  views.post_list),
+    path('loadFiles', views.load_files)
 ]

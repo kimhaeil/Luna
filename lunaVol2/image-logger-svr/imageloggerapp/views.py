@@ -34,11 +34,22 @@ def mainpage(request):
 
 def post_list(request):
 
-    dataset = [
+    chartDataSet = [
     {'ticket_class': 1, 'survived_count': 200, 'not_survived_count': 123},
     {'ticket_class': 2, 'survived_count': 119, 'not_survived_count': 158},
     {'ticket_class': 3, 'survived_count': 181, 'not_survived_count': 528}
     ]
+
+    tableDataSet = [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+    ]
+
+
     file_ = open(os.path.join(settings.BASE_DIR, 'test.txt'))
     print(file_.name)
     f = open(file_.name, 'r')
@@ -46,7 +57,10 @@ def post_list(request):
         contents = f.read()
         print(contents)
     return render(request, 'imageloggerapp/chart_list.html', {
-        'dataset': dataset
+        'chartDataSet': chartDataSet
     })
 
 
+def load_files(request):
+    print("load files called")
+    return HttpResponse()

@@ -1,15 +1,26 @@
+{% block css %}
+<link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
+{% endblock css %}
 
 <div>
-    <table>
+    <a href="/loadFiles">
+        <button type="button" class="btn btn-primary btn-lg">Load files</button>
+    </a>
+    <hr>
+    <table class="table table-striped table-bordered">
         <thead>
             <th>번호</th><th>제목</th><th>작성자</th>
         </thead>
         <tbody>
-                
+            {% for entry in chartDataSet %}
             <tr>
                 <td>3</td><td>제목3</td><td>작성자</td>
             </tr>
-                                
+            {% endfor %}     
         </tbody>
     </table>
+    <hr>
 </div>
