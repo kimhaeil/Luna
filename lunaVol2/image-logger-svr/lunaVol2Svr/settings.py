@@ -130,6 +130,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
+FILE_URL = '../loadedfiles'
+FILE_DIRS = [
+    os.path.join(BASE_DIR, "loadedfiles")
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
