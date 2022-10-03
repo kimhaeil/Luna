@@ -13,6 +13,11 @@ import os
 from chartjs.views.lines import BaseLineChartView
 from django.views.generic import TemplateView
 
+# 파일 로드
+from django.core.files.storage import FileSystemStorage
+from .forms import UploadFileForm
+
+
 class ImageList(APIView):
     def get(self, request):
         images = ImageInfoModel.objects.all()
@@ -62,5 +67,9 @@ def post_list(request):
 
 
 def load_files(request):
-    print("load files called")
+    if request.method  == 'POST' and request.FILES['loadfile']:
+        loadfile = request.FILES['loadfile']
+        print(loadfile)
+        fs = FileSystemStorage(location='../loadedfiles/')
+        filename = fs.save(loadfile.name, loadfile)
     return HttpResponse()
