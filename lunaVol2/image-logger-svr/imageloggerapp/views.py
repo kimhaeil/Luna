@@ -2,10 +2,12 @@ from django.shortcuts import render, HttpResponse
 
 
 from django.conf import settings
+
 import os
 import json
 
 from django.core.files.storage import FileSystemStorage
+
 
 def readfile(request, file):
     print(file)
@@ -61,9 +63,14 @@ def post_list(request):
 
 
 def load_files(request):
-    if request.method  == 'POST' and request.FILES['file']:
-        loadfile = request.FILES['file']
-        print(loadfile)
+    if request.method  == 'POST' and request.FILES['loadfile']:
+        loadfile = request.FILES['loadfile']
         fs = FileSystemStorage(location='../loadedfiles/')
         filename = fs.save(loadfile.name, loadfile)
-    # return HttpResponse()
+        read_file(filename)
+        return HttpResponse()
+    
+def read_file(filename):
+    print(filename)
+    file_ = open(os.path.join(settings.FILE_DIRS, 'filename'))
+
