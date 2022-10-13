@@ -5,8 +5,10 @@ from django.conf import settings
 
 import os
 import json
+from os.path import exists
 
 from django.core.files.storage import FileSystemStorage
+from sqlalchemy import false
 
 
 def readfile(request, file):
@@ -65,12 +67,13 @@ def post_list(request):
 def load_files(request):
     if request.method  == 'POST' and request.FILES['loadfile']:
         loadfile = request.FILES['loadfile']
-        fs = FileSystemStorage(location='../loadedfiles/')
-        filename = fs.save(loadfile.name, loadfile)
-        read_file(filename)
+        fs = FileSystemStorage()
+        file_exists = exists(loadfile.name)
+        if file_exists == false:
+            file = fs.save(loadfile.name, loadfile)
+        read_file(loadfile.name)
         return HttpResponse()
     
-def read_file(filename):
-    print(filename)
-    file_ = open(os.path.join(settings.FILE_DIRS, 'filename'))
+def read_file(path):
+    print(path)
 
