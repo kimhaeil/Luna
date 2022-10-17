@@ -6,6 +6,7 @@ from django.conf import settings
 import os
 import json
 from os.path import exists
+import pathlib
 
 from django.core.files.storage import FileSystemStorage
 from sqlalchemy import false
@@ -69,11 +70,19 @@ def load_files(request):
         loadfile = request.FILES['loadfile']
         fs = FileSystemStorage()
         file_exists = exists(loadfile.name)
+        print(file_exists)
         if file_exists == false:
             file = fs.save(loadfile.name, loadfile)
-        read_file(loadfile.name)
+        
+        read_file(pathlib.Path(loadfile.name).parent.resolve(), loadfile.name)
         return HttpResponse()
     
-def read_file(path):
+def read_file(location, file_name):
+    path = os.path.join(location, file_name)
     print(path)
+    f = open(path, 'r')
+    line = f.readline()
+    print(line)
+    f.close()
+
 
