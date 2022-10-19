@@ -70,7 +70,8 @@ def load_files(request):
         loadfile = request.FILES['loadfile']
         fs = FileSystemStorage()
         file_exists = exists(loadfile.name)
-        print(file_exists)
+        file_url = fs.url(loadfile.name)
+        print(file_url)
         if file_exists == false:
             file = fs.save(loadfile.name, loadfile)
         
