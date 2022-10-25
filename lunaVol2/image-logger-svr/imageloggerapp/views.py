@@ -1,5 +1,5 @@
 from django.shortcuts import render, HttpResponse
-
+from django.views.generic.base import TemplateView
 
 from django.conf import settings
 
@@ -10,6 +10,8 @@ import pathlib
 
 from django.core.files.storage import FileSystemStorage
 from sqlalchemy import false
+
+
 
 
 def readfile(request, file):
@@ -87,3 +89,9 @@ def read_file(location, file_name):
     f.close()
 
 
+class HomePageView(TemplateView):
+    template_name = "imageloggerapp/home.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
