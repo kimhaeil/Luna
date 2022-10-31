@@ -1,39 +1,12 @@
 {% load static %}
-<html>
-  <head>
-    <title>Django Girls blog</title>
-    <link
-      rel="stylesheet"
-      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"
-    />
-    <link
-      href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link rel="stylesheet" href="{% static 'css/imageloggerapp.css' %}" />
-  </head>
-  <body>
-    <body>
-      <div class="page-header">
-        <h1><a href="/">Log Viewer</a></h1>
-      </div>
-      <div class="content container">
-        <div class="row">
-          <div>
-            {% include 'imageloggerapp/data_table.html' %}
-            {% block content %} 
-            {% endblock %}
-          </div>
-          {% comment %} <div>
-            
-          </div> {% endcomment %}
-        </div>
-      </div>
-    </body>
-  </body>
-</html>
+{% load bootstrap4 %}
+
+{% block bootstrap4_content  %}
+  <div class="container">
+    <h1>{% block title %}Main{% endblock %}</h1>
+    <p>
+      <a href="{% url 'home' %}">home</a>
+    </p>
+  </div>
+{% endblock  %}
+
