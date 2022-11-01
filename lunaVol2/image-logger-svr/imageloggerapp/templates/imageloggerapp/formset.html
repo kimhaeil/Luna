@@ -5,6 +5,9 @@
 {% endblock %}
 
 {% block content  %}
-Test
+    {% bootstrap_formset_errors form%}
+    <form role="form" method="post">
+        {% bootstrap_formset form %}
+    </form>
 {% endblock  %}
 
