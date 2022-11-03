@@ -22,3 +22,5 @@ class ContactForm(ConfigurationForms):
     pass
 
 ContactFormSet = formset_factory(ConfigurationForms, formset=ContactBaseFormSet, extra=2, max_num=4, validate_max=True)
+
+
