@@ -1,9 +1,9 @@
 from unicodedata import name
 from django.urls import path
-from imageloggerapp.views import (HomePageView, DefaultFormSetView)
 
+from . import views
 
 urlpatterns = [
-    path('', HomePageView.as_view(), name="home" ),
-    path('formset', DefaultFormSetView.as_view(), name="formset_default")
+    path('', views.index),
+    path('<int:question_id>', views.detail),
 ]

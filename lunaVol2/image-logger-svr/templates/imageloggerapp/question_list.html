@@ -1,0 +1,9 @@
+{%if question_list%}
+    <ul>
+        {% for question in question_list%}
+            <li><a href="/imageloggerapp/{{question.id}}/">{{question.subject}}</li>
+        {% endfor %}
+    </ul>
+{%else%}
+    <p>None</p>
+{% endif %}
